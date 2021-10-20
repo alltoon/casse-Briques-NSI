@@ -15,16 +15,15 @@ couleurs = [(0, 0, 0), (255, 0, 0), (255, 255, 0), (255, 255, 255), (255, 100, 0
 
 # Mise en place de la fenêtre & de quelques détails
 
-taille = (800, 600)     # taille de la fenêtre
+taille = (800, 600)  # taille de la fenêtre
 # détermine la taille initiale de la fenêtre et sa possibiliée de redimentionement
 # fenetre = pygame.display.set_mode(taille, pygame.RESIZABLE)
 # détermine la taille initiale de la fenêtre
 fenetre = pygame.display.set_mode(taille)
 
-
 jeu = True  # Permettre au joueur de quitter le jeu par la suite
-score = 0
-vies = 5
+score, vies = 0, 5  # initialisation de la variable score et vie
+
 temps = pygame.time.Clock()  # contrôle de la vitesse de refresh
 
 # Liste contenant nos sprites (classes) qu'on va utiliser
