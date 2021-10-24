@@ -8,7 +8,7 @@ pygame.init()  # initialisation de PyGame
 
 # Définition des couleurs
 
-couleurs = [(0, 0, 0), (255, 0, 0), (255, 255, 0), (255, 255, 255), (255, 100, 0),
+couleurs = [(0, 0, 0), (200, 11, 5), (255, 255, 0), (255, 255, 255), (255, 100, 0),
             (121, 28, 248), (108, 2, 119), (223, 128, 255)]
 # couleurs[0] = noir, couleurs[1] = rouge, couleurs[2] = jaune, couleurs[3] = blanc, couleurs[4] = orange,
 # couleurs[5] = bleu, couleurs[6] = zinzolin, couleurs[7] = rose
@@ -51,8 +51,8 @@ for y in range(3):
         liste_sprites.add(brique)
         briques.add(brique)
 liste_sprites.add(raquette)  # on ajoute notre raquette à notre liste de sprites
-liste_sprites.add(brique)
-liste_sprites.add(balle)
+liste_sprites.add(brique)   # on ajoute notre brique à notre liste de sprites
+liste_sprites.add(balle)    # on ajoute notre balle à notre liste de sprites
 
 # Programme principal
 
@@ -91,7 +91,8 @@ while jeu:
             police = pygame.font.Font(None, 74)  # Gère la police du texte de fin
             texte = police.render("PERDU", 1, couleurs[3])
             texte_score = police.render("Votre Score :" + str(score), 1, couleurs[3])  # Affiche le texte de fin
-            fenetre.blit(texte, (275, 300)), fenetre.blit(texte_score, (220, 400))  # Positione le texte de fin
+            fenetre.fill(couleurs[1])  # fond rouge
+            fenetre.blit(texte, (200, 200)), fenetre.blit(texte_score, (200, 300))  # Positione le texte de fin
             pygame.display.flip()
             pygame.time.wait(3000)
 
@@ -113,7 +114,7 @@ while jeu:
         brique.kill()  # casse la brique
         if len(briques)==0:
             police = pygame.font.Font(None, 74)  # indentation de la police
-            text = police.render("Niveau Réussi Bravo", 1, couleurs[3])  # affichage du message de fin
+            text = police.render("Niveau Réussi Bravo", 1, couleurs[3]) # affichage du message de fin
             fenetre.blit(text, (200, 300))  # positionement du message de fin
             pygame.display.flip()
             pygame.time.wait(3000)  # temps d'affichage du message de fin
