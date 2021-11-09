@@ -112,3 +112,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+main.py
+main.py
+ressources/backgound.jpg
+ressources/bgg.jpg
+ressources/noe.jpg

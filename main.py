@@ -62,7 +62,7 @@ while jeu:
     # fenetre = pygame.display.set_mode((800, 600))
 
     # Chargement et collage du fond
-    fond = pygame.image.load("ressources/bgg.jpg").convert()
+    fond = pygame.image.load("ressources/backgound.jpg").convert()
     fenetre.blit(fond, (0, 0))
 
     # écouter le joueur
@@ -82,11 +82,16 @@ while jeu:
     # Vérifie si la balle touche un des murs (4)
     if balle.rect.x >= 760:  # mur de droite
         balle.velocity[0] = -balle.velocity[0]
+        if balle.velocity[1] == 0:  # permet d'annuler l'effet de rebond infini à l'horizontal
+            balle.velocity[1] = -(2+balle.velocity[1])
     if balle.rect.x <= 0:  # mur du haut
         balle.velocity[0] = -balle.velocity[0]
     if balle.rect.y > 590:  # mur du bas
         balle.velocity[1] = -balle.velocity[1]
         vies -= 1
+        balle.rect.x = 345  # réaparition de la balle
+        balle.rect.y = 300
+        pygame.time.wait(200)   # temps de répis apres la réaparition
         if vies==0:
             police = pygame.font.Font(None, 74)  # Gère la police du texte de fin
             texte = police.render("PERDU", 1, couleurs[3])
@@ -122,7 +127,6 @@ while jeu:
             # Arrête le jeu
             jeu = False
     # créer l'écran
-    # fenetre.fill(noir)  # fond noir
 
     police = pygame.font.Font(None, 34)  # indentation de la police
     text = police.render("Score: " + str(score), 1, couleurs[3])  # affichage du score
