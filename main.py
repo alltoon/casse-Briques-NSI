@@ -119,7 +119,7 @@ while jeu:
         brique.kill()  # casse la brique
         if len(briques)==0:
             police = pygame.font.Font(None, 74)  # indentation de la police
-            text = police.render("Niveau Réussi Bravo", 1, couleurs[3]) # affichage du message de fin
+            text = police.render("Niveau Réussi Bravo", 1, couleurs[3])    # affichage du message de fin
             fenetre.blit(text, (200, 300))  # positionement du message de fin
             pygame.display.flip()
             pygame.time.wait(3000)  # temps d'affichage du message de fin
