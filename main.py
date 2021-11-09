@@ -62,7 +62,7 @@ while jeu:
     # fenetre = pygame.display.set_mode((800, 600))
 
     # Chargement et collage du fond
-    fond = pygame.image.load("ressources/backgound.jpg").convert()
+    fond = pygame.image.load("ressources/Backgound.jpg").convert()
     fenetre.blit(fond, (0, 0))
 
     # écouter le joueur
